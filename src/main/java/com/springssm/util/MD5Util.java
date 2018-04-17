@@ -1,16 +1,14 @@
 package com.springssm.util;
 
+import org.springframework.util.StringUtils;
 
 import java.security.MessageDigest;
 
-
 /**
- * @program: springssm
- * @description: 5DM加密工具类
- * @author: Mr.Shu
- * @create: 2018-04-16 15:19
- **/
+ * Created by geely
+ */
 public class MD5Util {
+
     private static String byteArrayToHexString(byte b[]) {
         StringBuffer resultSb = new StringBuffer();
         for (int i = 0; i < b.length; i++)
@@ -46,15 +44,19 @@ public class MD5Util {
                 resultString = byteArrayToHexString(md.digest(resultString.getBytes(charsetname)));
         } catch (Exception exception) {
         }
+        if(resultString == null){
+            return null;
+        }
         return resultString.toUpperCase();
     }
 
     public static String MD5EncodeUtf8(String origin) {
-
+//
         return MD5Encode(origin, "utf-8");
     }
 
 
     private static final String hexDigits[] = {"0", "1", "2", "3", "4", "5",
             "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"};
+
 }
