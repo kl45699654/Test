@@ -1,10 +1,15 @@
 package com.springssm.service.impl;
 
+import com.google.common.collect.Lists;
 import com.springssm.service.IFileService;
+import com.springssm.util.FTPUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.UUID;
 
 /**
@@ -13,6 +18,7 @@ import java.util.UUID;
  * @author: Mr.Shu
  * @create: 2018-04-19 10:36
  **/
+@Service("iFileService")
 public class FileServiceImpl implements IFileService {
     private Logger logger = LoggerFactory.getLogger(FileServiceImpl.class);
 
@@ -52,4 +58,4 @@ public class FileServiceImpl implements IFileService {
     }
 
 }
-}
+
